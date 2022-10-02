@@ -1,5 +1,0 @@
-[master 0f29fd4] auto update
- 2 files changed, 5 insertions(+), 6 deletions(-)
- create mode 100644 log.txt
-To github.com:krmmzs/scripts.git
-   5354908..0f29fd4  master -> master
