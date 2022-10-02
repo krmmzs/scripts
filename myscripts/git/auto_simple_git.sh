@@ -5,7 +5,10 @@ for d in */ ; do
     cd "$d"
     if ! [[ $(git status) =~ "working tree clean" ]]; then
         git add .
-        git commit -m "auto update"
+        log=$(git commit -m "auto update")
+        if [[${log} =~ "error"] || [${log} =~ warning]]; then
+            echo ${log} > log.txt
+        fi
         git push
 
         # if [[ 1 == ${rebase} ]]; then
