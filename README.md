@@ -2,9 +2,9 @@
 
 ## Overview
 
-[Usage](#usage)
+[Usage](#recommended-usage)
 
-## Usage
+## Recommended Usage
 
 ```shell
 stow myscripts
@@ -12,5 +12,7 @@ stow myscripts
 
 if you want to remove link, just typing:
 ```shell
-stow -D <dir>
+git clone https://github.com/krmmzs/scripts.git
+cd scripts
+ln -s `pwd` <what you want to place>
 ```
