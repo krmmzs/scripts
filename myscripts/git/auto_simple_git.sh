@@ -14,7 +14,7 @@ for d in */ ; do
             echo "git commit failed, details see log.txt"
         fi
 
-        if ! [[ $(git push) =~ "error" ]]; then
+        if [[ $(git push) =~ "error" ]]; then
             echo "$d push failed" >> ${LOG}
             echo "git push failed, details see log.txt"
         fi
