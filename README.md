@@ -4,6 +4,8 @@
 
 [Usage](#recommended-usage)
 
+[git](#git)
+
 ## Recommended Usage
 
 ```shell
@@ -16,3 +18,5 @@ git clone https://github.com/krmmzs/scripts.git
 cd scripts
 ln -s `pwd` <what you want to place>
 ```
+
+## Git
