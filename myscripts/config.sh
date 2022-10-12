@@ -22,6 +22,9 @@ case $1 in
     snippets)
         $EDITOR /home/$USER/.config/nvim/snippets/
         ;;
+    git)
+        $EDITOR /home/$USER/.gitconfig
+        ;;
         
     *)
       {
