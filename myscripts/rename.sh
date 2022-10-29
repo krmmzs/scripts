@@ -1,13 +1,15 @@
 #!/bin/bash
 
-rename ''s/ /_/g'' '*.mkv'
+filetype="mkv"
+
+rename 's/ /_/g' *.$filetype
 count=1;
-for mkv in $(find . -maxdepth 1 -iname '*.mkv' -print | sort)
+for file in $(find . -maxdepth 1 -iname '*.'$filetype -print | sort)
 do
     # echo "${mkv}"
-    new=$count.${mkv##*.}
+    new=$count.${file##*.}
     echo "${new}"
-    echo "Renaming $mkv to $new"
-    mv "$mkv" "$new"
+    echo "Renaming $file to $new"
+    mv "$file" "$new"
     let count++
 done
