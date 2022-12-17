@@ -25,6 +25,9 @@ case $1 in
     git)
         $EDITOR /home/$USER/.gitconfig
         ;;
+    history)
+        $EDITOR /home/$USER/.zsh_history
+        ;;
         
     *)
       {
