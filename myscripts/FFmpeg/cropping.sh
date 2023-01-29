@@ -1,6 +1,19 @@
 #!/bin/bash
 
-mkv=./NC_Raws_Bocchi_the_Rock_06_CR_1920x1080_AVC_AAC_MKV_2070.mkv
-start="00:16:58"
-time="20"
-ffmpeg -i ${mkv} -ss ${start} -t ${time} -loglevel error -c:v copy -avoid_negative_ts 1 output.mkv
+# Prompt the user for the input file
+read -p "Enter the path to the input MKV file: " input_file
+
+# Prompt the user for the output file
+read -p "Enter the path to the output MKV file: " output_file
+
+# Prompt the user for the start time
+read -p "Enter the start time" start
+#
+# Prompt the user for the start time
+read -p "Enter the duration" time
+
+# Use FFmpeg to crop the video
+ffmpeg -i ${input_file} -ss ${start} -t ${time} -loglevel error -c:v copy -avoid_negative_ts 1 ${output_file}
+
+# Print a message to indicate that the script has completed
+echo "Video crop complete!"
