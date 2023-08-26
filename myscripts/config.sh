@@ -25,6 +25,9 @@ case $1 in
     git)
         $EDITOR /home/$USER/.gitconfig
         ;;
+    clash)
+        $EDITOR /home/$USER/MyGit/sciNet/main/config.yaml
+        ;;
     history)
         $EDITOR /home/$USER/.zsh_history
         ;;
