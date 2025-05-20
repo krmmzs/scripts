@@ -12,13 +12,13 @@ fi
 echo "Downloading: $latest_release"
 
 # Download file
-wget $latest_release
+wget "$latest_release"
 
 # Get the name of the downloaded file
-filename=$(basename $latest_release)
+filename=$(basename "$latest_release")
 
 # Unzip the file
-unzip $filename -o mihomo
+gunzip -c "$filename" > mihomo
 
 # Add execution privileges
 chmod +x ./mihomo
