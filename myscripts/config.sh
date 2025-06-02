@@ -8,7 +8,7 @@ echo $EDITOR
 
 case $1 in
     zsh)
-        $EDITOR /home/$USER/.zshrc 
+        $EDITOR /home/$USER/.zshrc
         ;;
     tmux)
         $EDITOR /home/$USER/.tmux.conf
@@ -31,7 +31,10 @@ case $1 in
     history)
         $EDITOR /home/$USER/.zsh_history
         ;;
-        
+    apt_proxy)
+        $EDITOR /etc/apt/apt.conf.d/95proxies
+        ;;
+
     *)
       {
         $EDITOR /home/$USER/.config/$1/*conf*
