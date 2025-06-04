@@ -24,7 +24,7 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> "$HOME/.profile"
 # Delete the downloaded zip file
 rm "$LATEST_GO_VERSION.linux-amd64.tar.gz"
 
-# Reload .bashrc
+# Reload .profile for root's shell
 source $HOME/.profile
 
 # Verify the installation
