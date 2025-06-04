@@ -49,10 +49,12 @@ else
 fi
 
 # Get the latest version of Go
-log_info "Fetching latest Go version information..."
-LATEST_GO_VERSION=$(wget -qO- https://go.dev/dl/ | grep -oP 'go([0-9\.]+)\.linux-amd64\.tar\.gz' | head -n 1 | grep -oP 'go[0-9\.]+' | sed 's/\.$//')
-if [ -z "$LATEST_GO_VERSION" ]; then
-    log_error "Failed to determine latest Go version"
+if ! LATEST_GO_VERSION=$(timeout 30 wget -qO- https://go.dev/dl/ 2>/dev/null | grep -oP 'go([0-9\.]+)\.linux-amd64\.tar\.gz' | head -n 1 | grep -oP 'go[0-9\.]+' | sed 's/\.$//' 2>/dev/null); then
+    log_error "Failed to fetch Go version information from https://go.dev/dl/"
+    log_error "This could be due to:"
+    log_error "  - Network connectivity issues"
+    log_error "  - go.dev website being unavailable"
+    log_error "  - Changes in the website structure"
     exit 1
 fi
 
