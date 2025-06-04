@@ -21,12 +21,6 @@ log_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Check if script is run as root
-if [ "$(id -u)" -eq 0 ]; then
-    log_error "This script should not be run as root"
-    exit 1
-fi
-
 # Function to handle errors
 handle_error() {
     log_error "An error occurred in script at line: ${1}"
