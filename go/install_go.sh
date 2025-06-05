@@ -79,7 +79,7 @@ else
 fi
 
 # Extract to /usr/local
-log_info "Extracting Go to /usr/local..."
+log_info "Extracting Go to /usr/local/"
 if sudo tar -C /usr/local -xzf "$LATEST_GO_VERSION.linux-amd64.tar.gz"; then
     log_info "Go extracted successfully"
 else
